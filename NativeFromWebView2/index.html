@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset= UTF-8">
+<script src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    // WebViewを閉じる（値を返さない呼び出し)
+    function closeWebView() {
+        $.get('native://closeWebView');
+    }
+    
+    // システム情報を得る(値を返す呼び出し）
+    function showSystemInfo() {
+        $.get('native://getSystemInfo', function (systemInfo) {
+              $('#placeholder').text(systemInfo);
+        });
+        
+    }
+</script>
+</head>
+<body>
+<a href="#" onclick="closeWebView()">WEBViewを閉じる</a>
+<a href="#" onclick="showSystemInfo()">システム情報を取得</a>
+<div id="placeholder"></div>
+</body>
+</html>

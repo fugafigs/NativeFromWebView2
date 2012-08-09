@@ -3,12 +3,13 @@
 //  NativeFromWebView2
 //
 //  Created by 波切 賢一 on 12/08/09.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012年 Adways. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "NativeProtocol.h"
 
 @implementation AppDelegate
 
@@ -21,6 +22,7 @@
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
+        
     [self.window makeKeyAndVisible];
     return YES;
 }

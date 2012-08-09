@@ -1,12 +1,13 @@
 //
 //  ViewController.m
-//  NativeFromWebView2
+//  Sample
 //
-//  Created by 波切 賢一 on 12/08/09.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by 波切 賢一 on 12/06/28.
+//  Copyright (c) 2012年 Adways. All rights reserved.
 //
 
 #import "ViewController.h"
+#import "WebViewController.h"
 
 @interface ViewController ()
 
@@ -31,4 +32,9 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)modal_tapped:(id)sender {
+    WebViewController *controller = [[ WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil ];
+    
+    [ self presentModalViewController:controller  animated:YES ];
+}
 @end
