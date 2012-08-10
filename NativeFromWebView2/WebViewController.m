@@ -2,7 +2,7 @@
 //  WebViewController.m
 //  Sample
 //
-//  Created by 波切 賢一 on 12/06/28.
+//  Created by Adways on 12/06/28.
 //  Copyright (c) 2012年 Adways. All rights reserved.
 //
 
@@ -25,13 +25,14 @@
         
         // NativeProtocolへのリクエストをViewControllerへ通知する
         NSNotificationCenter *center = [ NSNotificationCenter defaultCenter ];
-        [ center addObserver:self selector:@selector(handleNativeProtocol:) name:@"handleNativeProtocol" object:nil ];
+        [ center addObserver:self selector:@selector(invokeNativeMethod:) name:@"invokeNativeMethod" object:nil ];
     }
     return self;
 }
 
 -(void)dealloc
 {
+    // NativeProtocolを無効にする
     [ NSURLProtocol unregisterClass: [ NativeProtocol class ]];
 }
 
@@ -57,7 +58,7 @@
 }
 
 // NativeProtocolの処理を行う
--(void)handleNativeProtocol : (NSNotification *)notification
+-(void)invokeNativeMethod : (NSNotification *)notification
 {
     NativeProtocol *protocol = notification.object;
     NSURLRequest   *request  = protocol.request;

@@ -24,7 +24,7 @@
 {
     NSNotificationCenter *center = [ NSNotificationCenter defaultCenter ];
     
-    [ center postNotificationName:@"handleNativeProtocol" object:self userInfo:nil];
+    [ center postNotificationName:@"invokeNativeMethod" object:self userInfo:nil];
 }
 
 - (void)stopLoading

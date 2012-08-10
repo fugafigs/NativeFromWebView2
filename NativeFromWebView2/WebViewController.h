@@ -2,7 +2,7 @@
 //  WebViewController.h
 //  Sample
 //
-//  Created by 波切 賢一 on 12/06/28.
+//  Created by Adways on 12/06/28.
 //  Copyright (c) 2012年 Adways. All rights reserved.
 //
 
